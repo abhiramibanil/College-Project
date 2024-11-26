@@ -1,0 +1,98 @@
+.c-1{
+    height: 31.2rem;
+    width: 100%;
+    border-radius: 1.89rem;
+    margin-bottom: 3.15rem;
+    background-color:#eebefa ;
+    
+  }
+  .co{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding-top: 25px;
+  }
+  .ca{
+    font-size: 30px;
+  }
+  .cd-1{
+    border-collapse: collapse;
+    width: 60%;
+  }
+  .course-schedule {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .course-schedule h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .description {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  
+  .description .highlight {
+    background-color: #ffefc5;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+  
+  .schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .schedule-table thead {
+    background-color: #f4f4f4;
+  }
+  
+  .schedule-table th,
+  .schedule-table td {
+    text-align: left;
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  .schedule-table th {
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .schedule-table td {
+    color: #333;
+  }
+  
+  .schedule-table .badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
+  .badge.lesson {
+    background-color: #ffc107;
+  }
+  
+  .badge.assignment {
+    background-color: #f44336;
+  }
+  
+  .badge.exam {
+    background-color: #03a9f4;
+  }
+  
+  .schedule-table td:first-child {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+  }

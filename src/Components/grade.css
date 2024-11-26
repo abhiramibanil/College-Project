@@ -1,0 +1,32 @@
+table {
+    width: 70%;
+    margin: 50px auto 0 auto;
+  }
+  
+  .ghead {
+    border: 1px solid #212529;
+  }
+  
+  table th {
+    padding: 15px;
+    border: 1px solid #212529;
+    text-align: center;
+  }
+  table td {
+    border: 1px solid #868e96;
+    text-align: center;
+    padding: 10px;
+  }
+  .tdr-p {
+    color: white;
+    background-color: #40c057;
+  }
+  .tdr-y {
+    color: white;
+    background-color: #fcc419;
+  }
+  
+  .tdr-r {
+    color: white;
+    background-color: red;
+  }

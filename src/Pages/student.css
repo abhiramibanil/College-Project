@@ -1,0 +1,111 @@
+.st-nav {
+    width: 16%;
+    /* height: 90vh; */
+    border: 1px solid black;
+    margin-left: 30px;
+    border-radius: 20px;
+  }
+  
+  .st-logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 50px;
+  }
+  
+  .img-s {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  
+  .scnav {
+    display: flex;
+    font-size: 20px;
+    justify-content: flex-start;
+    gap: 20px;
+    border-bottom: 1px solid grey;
+    height: 30px;
+    width: 60%;
+    margin: 0 auto 50px auto;
+    cursor: pointer;
+  }
+  .scnav p {
+    font-size: 16px;
+  }
+  .student-dash {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background: linear-gradient(
+      to right,
+      rgba(173, 216, 230, 0.3),
+      rgba(173, 216, 230, 0)
+    );
+  }
+  
+  /* ---------------------------Student Detail--------------------------------- */
+  .student-detail {
+    width: 75%;
+    height: auto;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 5px;
+  }
+  
+ 
+  
+  .stdetail {
+    width: 300px;
+  }
+  .stdetail h1 {
+    font-size: 30px;
+  }
+  
+  .sbtn {
+    background-color: green;
+    color: white;
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+  }
+  .s-det-btn {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .fa-p {
+    font-size: 25px;
+    cursor: pointer;
+  }
+  
+  .std-pro img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .std-pro {
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+  
+  .person-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* border: 1px solid black; */
+    height: 100px;
+    padding: 20px;
+  }
+  
+  /*  */

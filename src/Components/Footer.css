@@ -1,0 +1,44 @@
+/* Footer */
+.footer {
+  background-color: #339af0;
+  height: 300px;
+  padding: 20px 0px 0px 0px;
+  /* margin-top: 200px; */
+}
+
+.footer-dir {
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer ul li {
+  list-style: none;
+  margin-bottom: 20px;
+  color: white;
+  cursor: pointer;
+}
+.lih {
+  margin-bottom: 30px;
+  font-size: 23px;
+}
+.footer ul li:last-child {
+  margin-bottom: 0px;
+}
+
+.social {
+  display: flex;
+  font-size: 25px;
+  gap: 20px;
+}
+
+.foo-div {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+  color: white;
+  font-weight: 600;
+}
+.foo-div p:first-child {
+  font-size: 30px;
+  font-family: "Cedarville Cursive", cursive;
+}
