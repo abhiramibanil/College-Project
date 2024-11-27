@@ -6,19 +6,21 @@ import NavBar from "./Components/Navbar";
 import TeachDash from "./Pages/TeachDash";
 
 import Footer from "./Components/Footer";
-import StudentDashboard from"./Pages/StudentDashboard"
+import StudentDashboard from "./Pages/StudentDashboard";
+import Landing from "./Components/Landing";
 
 function App() {
   return (
     <>
-    <NavBar />
+      <NavBar />
       <Routes>
         <Route path="/" element={<Login />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
-       <Route path="/teachDash" element={<TeachDash/>}></Route>
-       <Route path="/studentDash" element={<StudentDashboard/>}></Route>
+        <Route path="/teachDash" element={<TeachDash />}></Route>
+        <Route path="/studentDash" element={<StudentDashboard />}></Route>
+        <Route path="/home" element={<Landing />}></Route>
       </Routes>
-      <Footer/>
+      <Footer />
     </>
   );
 }
