@@ -4,7 +4,6 @@ import Login from "./Components/Login";
 import SignUp from "./Components/SignUp";
 import NavBar from "./Components/Navbar";
 import TeachDash from "./Pages/TeachDash";
-
 import Footer from "./Components/Footer";
 import StudentDashboard from "./Pages/StudentDashboard";
 import Landing from "./Components/Landing";

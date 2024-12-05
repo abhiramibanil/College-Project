@@ -1,7 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import "./login.css";
+import { Link } from "react-router-dom";
 
 export default function Login() {
+  const [userData, setUserData] = useState({
+    email: "",
+    role: "",
+    password: "",
+  });
+
+  const handleLogin = function (e) {
+    e.preventDefault();
+    if (userData.email && userData.password) {
+      alert(`${userData.email}..${userData.password}`);
+    } else {
+      alert("Please Enter the form Completely");
+    }
+  };
+
   return (
     <>
       <div className="lg-Box">
@@ -17,7 +33,14 @@ export default function Login() {
                 <label htmlFor="email" className="t">
                   Email
                 </label>
-                <input type="text" id="email" placeholder="Enter Your email" />
+                <input
+                  onChange={(e) =>
+                    setUserData({ ...userData, email: e.target.value })
+                  }
+                  type="text"
+                  id="email"
+                  placeholder="Enter Your email"
+                />
               </div>
 
               <div className="i-box">
@@ -25,6 +48,9 @@ export default function Login() {
                   Password
                 </label>
                 <input
+                  onChange={(e) =>
+                    setUserData({ ...userData, password: e.target.value })
+                  }
                   type="password"
                   id="password"
                   placeholder="Enter Password"
@@ -41,7 +67,9 @@ export default function Login() {
               <p>Forgot Password</p>
             </div>
 
-            <button className="signBtn">Sign in</button>
+            <button onClick={handleLogin} className="signBtn">
+              Sign in
+            </button>
             <button className="google">
               {" "}
               <img
@@ -51,7 +79,8 @@ export default function Login() {
               Sign in with Google
             </button>
             <p className="spf">
-              Don't have an account? <span>Sign up for free!</span>
+              Don't have an account?{" "}
+              <Link to={"./signup"}>Click here to signup</Link>
             </p>
           </div>
         </div>
@@ -64,3 +93,25 @@ export default function Login() {
     </>
   );
 }
+
+// const [email, emailupdate] = useState("");
+// const [password, passwordupdate] = useState("");
+
+// const Conformlogin = (e) => {
+//   e.preventDefault();
+//   if (validate()) {
+//     console.log("proceed");
+//   }
+// };
+// const validate = () => {
+//   let result = true;
+//   if (email === "" || email === null) {
+//     result = false;
+//     alert("Please enter the email");
+//   }
+//   if (password === "" || password === null) {
+//     result = false;
+//     alert("Please enter the password");
+//   }
+//   return result;
+// };
