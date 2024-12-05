@@ -1,44 +1,68 @@
-/* Footer */
+/* -----Footer--- */
+
 .footer {
-  background-color: #339af0;
-  height: 300px;
-  padding: 20px 0px 0px 0px;
-  /* margin-top: 200px; */
+  border: 1px solid black;
+  margin-top: 70px;
+  padding: 20px;
+  background-color: #29293d;
+  height: 400px;
 }
 
-.footer-dir {
-  display: flex;
-  justify-content: space-around;
-}
-
-.footer ul li {
-  list-style: none;
-  margin-bottom: 20px;
+.fp-1 {
   color: white;
-  cursor: pointer;
-}
-.lih {
-  margin-bottom: 30px;
-  font-size: 23px;
-}
-.footer ul li:last-child {
-  margin-bottom: 0px;
-}
-
-.social {
-  display: flex;
-  font-size: 25px;
-  gap: 20px;
-}
-
-.foo-div {
-  display: flex;
-  justify-content: space-around;
+  text-align: center;
+  font-size: 20px;
   margin-top: 30px;
-  color: white;
-  font-weight: 600;
 }
-.foo-div p:first-child {
+.fp-2 {
+  color: white;
+  text-align: center;
+}
+.sb-n {
+  border: none;
+  width: 120px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #495057;
+  color: white;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+.s-btn-box {
+  display: flex;
+  justify-content: center;
+}
+.hrf {
+  color: white;
+  width: 70%;
+  margin: 20px auto 0 auto;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+.fa-soc {
+  color: white;
   font-size: 30px;
-  font-family: "Cedarville Cursive", cursive;
+}
+.fo-l {
+  display: flex;
+  width: 85%;
+  margin: 30px auto 20px auto;
+  justify-content: space-around;
+}
+.fo-l li {
+  list-style: none;
+  color: white;
+}
+.copy-right {
+  text-align: center;
+  color: white;
+  margin-top: 40px;
 }
