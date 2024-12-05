@@ -1,0 +1,64 @@
+.head-course-text {
+  height: 60px;
+  font-size: 20px;
+
+  margin-top: 70px;
+  display: flex;
+  justify-content: center;
+}
+
+.course-box {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+.head-course-text p {
+  border-bottom: 5px solid #e67700;
+  border-radius: 1px;
+}
+
+.course {
+  width: 27%;
+  height: 330px;
+  margin-bottom: 30px;
+}
+/* ---------------------------Help-------------------------- */
+.help {
+  width: 70%;
+  height: 300px;
+
+  margin: 40px auto 0px auto;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.ht-2 {
+  width: 75%;
+}
+.help img {
+  width: 50%;
+  height: 100%;
+}
+
+.re-faq {
+  border: none;
+  width: 100px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fab005;
+  color: white;
+  border-radius: 5px;
+  font-size: 12px;
+}
+.ht-box {
+  display: flex;
+  gap: 50px;
+  margin-top: 30px;
+}
+.ht-box p {
+  color: #fab005;
+}

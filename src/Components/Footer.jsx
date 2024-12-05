@@ -1,47 +1,38 @@
 import React from "react";
-import './Footer.css'
+import "./Footer.css";
 function Footer() {
   return (
     <>
       <div className="footer">
-        <div className="footer-dir">
-          <ul className="fl">
-            <li className="lih">About us</li>
-            <li>Future</li>
-            <li>Academic Programs</li>
-            <li>Research</li>
-          </ul>
-          <ul className="fl">
-            <li className="lih">Library</li>
-            <li>Recreation</li>
-            <li>Varsity Sports</li>
-            <li>Alumini</li>
-          </ul>
+        <p className="fp-1">Subscribe to our news letter</p>
+        <p className="fp-2">
+          Get expert advice for your journey to university delivered to your
+          inbox each <br /> month. It's short, and worthwhile – we promise!
+        </p>
 
-          <ul className="fl">
-            <li className="lih">Given Up</li>
-            <li>Disclaimer</li>
-            <li>Given Us</li>
-            <li>Contact</li>
-          </ul>
-
-          <ul className="social">
-            <li>
-              <i class="fa-brands fa-facebook"></i>
-            </li>
-            <li>
-              <i class="fa-brands fa-instagram"></i>
-            </li>
-            <li>
-              <i class="fa-brands fa-twitter"></i>
-            </li>
-          </ul>
+        <div className="s-btn-box">
+          <button className="sb-n">Subscribe Now</button>
         </div>
 
-        <div className="foo-div">
-          <p>BV University</p>
-          <p>CopyRight &copy; Bv University Disclaimer </p>
+        <hr className="hrf" />
+
+        <div className="socials">
+          <i class="fa-brands fa-facebook fa-soc"></i>
+          <i class="fa-brands fa-instagram fa-soc"></i>
+          <i class="fa-brands fa-twitter fa-soc"></i>
+          <i class="fa-brands fa-linkedin fa-soc"></i>
         </div>
+
+        <ul className="fo-l">
+          <li>About</li>
+          <li>Contact us</li>
+          <li>faq</li>
+          <li>Terms and Condition</li>
+          <li>Cookie Policy</li>
+          <li>Privacy</li>
+        </ul>
+
+        <p className="copy-right">Copyright &#169; 2023 - Mrs. College Guide</p>
       </div>
     </>
   );
