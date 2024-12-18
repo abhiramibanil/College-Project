@@ -8,6 +8,12 @@ import Footer from "./Components/Footer";
 import StudentDashboard from "./Pages/StudentDashboard";
 import Landing from "./Components/Landing";
 import Home from "./Pages/Home";
+import Overview from "./Components/Overview";
+import AddUser from "./Components/AddUser";
+import AddStudent from "./Components/AddStudent";
+import AddTeach from "./Components/AddTeach";
+import Hod from "./Pages/Hod";
+
 
 function App() {
   return (
