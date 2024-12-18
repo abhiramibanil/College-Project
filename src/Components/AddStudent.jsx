@@ -4,7 +4,9 @@ import './AddStudent.css'
 function AddStudent() {
   return (
     <>
-     <div className="add-user-container">
+     <div className="add-user-container"
+     >
+
   
   <div className="main">
     <div className="form-container">
