@@ -6,6 +6,8 @@ import Coursedetails from "../Components/Coursedetails";
 import Notes from "../Components/Notes";
 import Taskresponse from "../Components/Taskresponse";
 import Overview from "../Components/Overview";
+import { Link } from "react-router-dom";
+
 
 function TeachDash() {
   const [activeFeature, setactiveFeature] = useState(null);
@@ -47,6 +49,16 @@ function TeachDash() {
           <div className="fr-box">
             <div className="fbox">
               <h3>WELCOME , USER!</h3>
+              <div className="s-det-btn">
+                  <button className="sbtn">Active</button>
+
+                  <button className="sbtn">
+                    <Link to={"/home"}>
+                      <i class="fa-solid fa-right-to-bracket st-r"></i> &nbsp;
+                      SignOut
+                    </Link>
+                  </button>
+                </div>
             </div>
             <div className="f2box">
               <i class="awsome fa-solid fa-magnifying-glass"></i>
