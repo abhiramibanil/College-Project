@@ -8,7 +8,10 @@ import Footer from "./Components/Footer";
 import StudentDashboard from "./Pages/StudentDashboard";
 import Landing from "./Components/Landing";
 import Home from "./Pages/Home";
-
+import Overview from "./Components/Overview";
+import AddUser from "./Components/AddUser";
+import AddStudent from "./Components/AddStudent";
+import AddTeach from "./Components/AddTeach";
 function App() {
   return (
     <>
@@ -19,6 +22,11 @@ function App() {
         <Route path="/teachDash" element={<TeachDash />}></Route>
         <Route path="/studentDash" element={<StudentDashboard />}></Route>
         <Route path="/home" element={<Home />}></Route>
+        <Route path="/Overview" element={<Overview/>}></Route>
+        <Route path="/Add" element={<AddUser/>}></Route>
+        <Route path="/AddStudent" element={<AddStudent/>}></Route>
+        <Route path="/AddTeacher" element={<AddTeach/>}></Route>
+
       </Routes>
       {/* <Footer /> */}
     </>
