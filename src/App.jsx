@@ -30,6 +30,7 @@ function App() {
         <Route path="/Add" element={<AddUser/>}></Route>
         <Route path="/AddStudent" element={<AddStudent/>}></Route>
         <Route path="/AddTeacher" element={<AddTeach/>}></Route>
+        
 
       </Routes>
       {/* <Footer /> */}

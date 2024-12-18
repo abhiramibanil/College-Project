@@ -1,7 +1,17 @@
 import React, { useState } from "react";
 import "./landing.css";
+import { Link, useNavigate } from "react-router-dom";
 
 function Landing() {
+   
+  const navigate=useNavigate()
+  const username=sessionStorage.getItem("username")
+
+  const handleLogout = () => {
+   
+    sessionStorage.clear();
+    
+};
   const [uniDetail, setUniDetail] = useState([
     {
       icon: <i class="fa-solid fa-magnifying-glass fmg"></i>,
@@ -23,19 +33,30 @@ function Landing() {
     <>
       <>
         <div className="landing-page">
-          <div className="nav-bar">
-            <div className="logo">
+          <div className="nav-bar d-flex justify-content-between">
+            <div className="logo ms-5">
               <p>BV College</p>
             </div>
 
-            <ul className="nav-dir">
-              <li>Home</li>
-              <li>About</li>
-              <li>Contact</li>
-              <li>
-                <button className="sign-in-btn">Sign in</button>
-              </li>
-            </ul>
+          
+              
+              <div className="me-5">
+                <div className="d-flex text-white ">
+                  <button className="cc me-2 btn btn-ouline-success"><i class="fa-solid fa-user me-1"></i>{username}</button>
+                  {/* <h5 className="mt-2 me-2">{username}</h5> */}
+              <Link to='/studentDash'  style={{textDecoration:"none"}}>
+              <button className="sign-in-btn">Dashboard</button>
+              </Link>
+              <Link to='/'  style={{textDecoration:"none"}}>
+              <button className="logout btn -btn-danger ms-2" onClick={handleLogout}>logut<i class="fa-solid fa-right-from-bracket ms-1"></i></button>
+              </Link>
+              </div>
+              
+                
+              </div>
+              
+            
+        
           </div>
           <div className="land-text">
             <p>
