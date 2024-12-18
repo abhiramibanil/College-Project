@@ -38,7 +38,7 @@ function HodOverview() {
                         <div className="tab-3 shadow">
                             <div className="tab-icon">
                                 <i class="fa-solid fa-volume-low size"></i>
-                                <h6>Anouncements</h6>
+                                <h6>Announcements</h6>
                             </div>
                             <div className="tab-content">
                                 <p>

@@ -161,3 +161,7 @@
 .cp2 {
   color: #f08c00;
 }
+.logout{
+  background-color: red;
+  height: 40px;
+}

@@ -32,23 +32,20 @@ function Hod() {
               </div>
 
               <div className={`scnav ${activeFeature === "assign" ? "active" : ""}`} onClick={() => handleFeature("assign")}>
-                <i className="fa-solid fa-sheet-plastic"></i>
-                <p className='mt-3'>Assignments</p>
+              <i class="fa-solid fa-file  size"></i>
+                <p className='mt-3'>Cources</p>
               </div>
 
               <div className={`scnav ${activeFeature === "grade" ? "active" : ""}`} onClick={() => handleFeature("grade")}>
-                <i className="fa-solid fa-percent"></i>
-                <p className='mt-3'>Grades</p>
+              <i class="fa-solid fa-volume-low size"></i>
+                <p className='mt-3'>Announcements</p>
               </div>
 
-              <div className={`scnav ${activeFeature === "notes" ? "active" : ""}`} onClick={() => handleFeature("notes")}>
-                <i className="fa-solid fa-book"></i>
-                <p className='mt-3'>Notes</p>
-              </div>
+              
 
               <div className={`scnav ${activeFeature === "attend" ? "active" : ""}`} onClick={() => handleFeature("attend")}>
-                <i className="fa-solid fa-clipboard-user"></i>
-                <p className='mt-3'>Attendance</p>
+              <i class="fa-solid fa-chalkboard-user size"></i>
+                <p className=''>Facultys</p>
               </div>
             </div>
           </div>

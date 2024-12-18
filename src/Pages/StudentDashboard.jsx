@@ -8,6 +8,7 @@ import Assignment from "../Components/Assignment";
 import { Link } from "react-router-dom";
 
 function StudentDashboard() {
+  const username=sessionStorage.getItem("username")
   const [activeFeature, setActiveFeature] = useState(null);
 
   const handleFeature = (feature) => {
@@ -55,8 +56,9 @@ function StudentDashboard() {
             {/* --------------StudentDetail---------------- */}
 
             <div className="person-detail">
-              <div className="stdetail">
-                <h1>Welcome, Student! </h1>
+              <div className="stdetail ">
+                <div className="d-flex justify-content-center"> <h1>Welcome,</h1><h1 className="text-success"> {username} </h1></div>
+               
 
                 <div className="s-det-btn">
                   <button className="sbtn">Active</button>
