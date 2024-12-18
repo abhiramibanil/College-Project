@@ -9,6 +9,7 @@ import Footer from "./Components/Footer";
 import StudentDashboard from "./Pages/StudentDashboard";
 import Landing from "./Components/Landing";
 import Home from "./Pages/Home";
+import Hod from "./Pages/Hod";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/signup" element={<SignUp />}></Route>
         <Route path="/teachDash" element={<TeachDash />}></Route>
         <Route path="/studentDash" element={<StudentDashboard />}></Route>
+        <Route path="/hodDash" element={<Hod />}></Route>
         <Route path="/home" element={<Home />}></Route>
       </Routes>
       {/* <Footer /> */}

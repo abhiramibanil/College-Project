@@ -1,0 +1,127 @@
+.overview {
+    width: 60%;
+    display: flex;
+    gap: 15px;
+    margin: 50px auto 0 auto;
+    justify-content: flex-start;
+    transition: all 0.2s;
+    margin-top: 40px;
+  }
+  
+  .overview:hover {
+    transform: scale(1.2);
+  }
+  
+  .middle-bar {
+    height: 31.2rem;
+    width: 100%;
+    border-radius: 1.89rem;
+    display: flex;
+    margin-bottom: 3.15rem;
+  }
+  
+  .middle1 {
+    height: 100%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .middle-s {
+    height: 48%;
+    width: 100%;
+    gap: 20px;
+    display: flex;
+    justify-content: space-between; /* Ensure equal spacing */
+  }
+  
+  .middle-f {
+    height: 50%;
+    width: 100%;
+    gap: 20px;
+    justify-content: space-between; /* Ensure equal spacing */
+    display: flex;
+  }
+  
+  .middle2 {
+    height: 100%;
+    width: 30%;
+    margin-bottom: 0.63rem;
+  }
+  
+  .tab-1,
+  .tab-2,
+  .tab-3,
+  .tab-4 {
+    width: 48%; /* Ensure cards are same width */
+    height: 90%;
+    border-radius: 2.835rem;
+    transition: all 0.3s;
+  }
+  
+  .tab-1 {
+    background-color: #b2f2bb;
+    margin-left: 70px;
+  }
+  
+  .tab-2 {
+    background-color: #d8f5a2;
+  }
+  
+  .tab-3 {
+    background-color: #ffec99;
+    margin-left: 70px;
+  }
+  
+  .tab-4 {
+    background-color: #eebefa;
+  }
+  
+  .tab-1:hover,
+  .tab-2:hover,
+  .tab-3:hover,
+  .tab-4:hover {
+    transform: translateY(-15px);
+  }
+  
+  .notification-bar {
+    height: 90%;
+    width: 45%;
+    margin-top: 0%;
+    margin-left: 2%;
+    margin-bottom: 10%;
+    border-radius: 2.835rem;
+    transition: all 0.3s;
+    background-color: #ffa8a8;
+  }
+  
+  .notification-bar:hover {
+    transform: translateY(-20px);
+  }
+  
+  .tab-icon {
+    width: 50%;
+    display: flex;
+    gap: 15px;
+    margin: 30px auto 0 auto;
+    justify-content: flex-start;
+  }
+  
+  .tab-content,
+  .notification-content {
+    width: 80%;
+    justify-content: flex-start;
+    margin: 5px auto;
+  }
+  
+  .notification-icon {
+    width: 80%;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding-top: 20px;
+  }
+  
