@@ -5,6 +5,7 @@ function HodCourse() {
     <>
       <div className="card" style={{ width: '18rem' }}>
         <img
+        
           src="https://via.placeholder.com/150"
           className="card-img-top"
           alt="Example card image"
