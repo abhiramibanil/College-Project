@@ -7,6 +7,9 @@ import Grade from "../Components/Grade";
 import Assignment from "../Components/Assignment"; 
 import { Link } from "react-router-dom";
 import HodOverview from '../Components/HodOverview'; // Removed duplicate import
+import HodCourse from '../Components/HodCourse';
+import HodFaculty from '../Components/HodFaculty';
+import HodAnnounce from '../Components/HodAnnounce';
 
 function Hod() {
   const [activeFeature, setActiveFeature] = useState(null);
@@ -31,19 +34,19 @@ function Hod() {
                 <p className='mt-3'>Overview</p>
               </div>
 
-              <div className={`scnav ${activeFeature === "assign" ? "active" : ""}`} onClick={() => handleFeature("assign")}>
+              <div className={`scnav ${activeFeature === "assign" ? "active" : ""}`} onClick={() => handleFeature("cource")}>
               <i class="fa-solid fa-file  size"></i>
                 <p className='mt-3'>Cources</p>
               </div>
 
-              <div className={`scnav ${activeFeature === "grade" ? "active" : ""}`} onClick={() => handleFeature("grade")}>
+              <div className={`scnav ${activeFeature === "grade" ? "active" : ""}`} onClick={() => handleFeature("announce")}>
               <i class="fa-solid fa-volume-low size"></i>
                 <p className='mt-3'>Announcements</p>
               </div>
 
               
 
-              <div className={`scnav ${activeFeature === "attend" ? "active" : ""}`} onClick={() => handleFeature("attend")}>
+              <div className={`scnav ${activeFeature === "attend" ? "active" : ""}`} onClick={() => handleFeature("faculty")}>
               <i class="fa-solid fa-chalkboard-user size"></i>
                 <p className=''>Facultys</p>
               </div>
@@ -80,10 +83,10 @@ function Hod() {
 
             {/* Dynamic Components Based on Active Feature */}
             {activeFeature === "hodoverview" && <HodOverview />}
-            {activeFeature === "attend" && <Graph />}
-            {activeFeature === "grade" && <Grade />}
-            {activeFeature === "assign" && <Assignment />}
-            {activeFeature === "notes" && <Stdnotes />}
+            {activeFeature === "cource" && <HodCourse />}
+            {activeFeature === "announce" && <HodAnnounce />}
+            {activeFeature === "faculty" && <HodFaculty />}
+            
           </div>
         </div>
       </div>
