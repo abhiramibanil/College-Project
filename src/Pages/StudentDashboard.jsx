@@ -56,8 +56,8 @@ function StudentDashboard() {
             {/* --------------StudentDetail---------------- */}
 
             <div className="person-detail">
-              <div className="stdetail ">
-                <div className="d-flex justify-content-center"> <h1>Welcome,</h1><h1 className="text-success"> {username} </h1></div>
+              <div className="stdetail w-50 ms-0 ">
+                <div className="uname d-flex justify-content-start"> <h1>Welcome,</h1><h1 className="text-success"> {username} </h1></div>
                
 
                 <div className="s-det-btn">
