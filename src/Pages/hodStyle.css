@@ -23,7 +23,7 @@
     display: flex;
     font-size: 20px;
     justify-content: flex-start;
-    gap: 20px;
+    gap: 0px;
     border-bottom: 1px solid grey;
     height: 30px;
     width: 60%;

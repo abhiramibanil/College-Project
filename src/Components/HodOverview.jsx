@@ -35,10 +35,11 @@ function HodOverview() {
                         </div>
                     </div>
                     <div className="middle-s ">
+                       
                         <div className="tab-3 shadow">
                             <div className="tab-icon">
-                                <i class="fa-solid fa-volume-low size"></i>
-                                <h6>Announcements</h6>
+                            <i class="fa-solid fa-volume-low size"></i>
+                            <h6>Announcements</h6>
                             </div>
                             <div className="tab-content">
                                 <p>
@@ -47,19 +48,19 @@ function HodOverview() {
                                 </p>
                             </div>
                         </div>
-                        <div className="notification-bar shadow">
-                            <div className="notification-icon">
+                        <div className="tab-4 shadow">
+                            <div className="tab-icon">
                             <i class="fa-solid fa-chalkboard-user size"></i>
-                                <h6>Faculty Details</h6>
+                            <h6>Faculty Details</h6>
                             </div>
-                            <div className="notification-content">
+                            <div className="tab-content">
                                 <p>
                                     Lorem ipsum dolor sit amet consectetur accusamus nostrum rem
                                     aperiam ullam adipisci incidunt! Itaque!
                                 </p>
                             </div>
                         </div>
-
+                        
                     </div>
                 </div>
                 <div className="middle2">
