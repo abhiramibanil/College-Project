@@ -72,10 +72,12 @@
   .tab-3 {
     background-color: #ffec99;
     margin-left: 70px;
+    width: 750%;
   }
   
   .tab-4 {
     background-color: #eebefa;
+    width: 900%;
   }
   
   .tab-1:hover,
@@ -87,10 +89,10 @@
   
   .notification-bar {
     height: 90%;
-    width: 45%;
+    width: 35%;
     margin-top: 0%;
     margin-left: 2%;
-    margin-bottom: 10%;
+    /* margin-bottom: 10%; */
     border-radius: 2.835rem;
     transition: all 0.3s;
     background-color: #ffa8a8;
@@ -115,7 +117,7 @@
     margin: 5px auto;
   }
   
-  .notification-icon {
+  /* .notification-icon {
     width: 80%;
     display: flex;
     gap: 10px;
@@ -124,4 +126,4 @@
     margin: 10px;
     padding-top: 20px;
   }
-  
+   */
