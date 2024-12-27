@@ -14,6 +14,8 @@ import AddStudent from "./Components/AddStudent";
 import AddTeach from "./Components/AddTeach";
 import Hod from "./Pages/Hod";
 import AddHod from "./Components/AddHod";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function App() {
@@ -36,6 +38,7 @@ function App() {
 
       </Routes>
       {/* <Footer /> */}
+      <ToastContainer/>
     </>
   );
 }

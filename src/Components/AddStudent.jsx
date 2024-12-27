@@ -18,6 +18,7 @@ function AddStudent() {
     department: '',
   });
 
+
   const navigate = useNavigate();
 
   const handleChange = (e) => {
