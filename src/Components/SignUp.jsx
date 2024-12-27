@@ -1,34 +1,21 @@
-import React, { useState } from "react";
-import "./signup.css";
+import React from "react";
+// import "./signup.css";
 
 function SignUp() {
   return ( 
-    <div class="container">
-    <h2>Super User Login</h2>
-    <form>
-        <div class="input-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" placeholder="Enter your email" required/>
+    <>
+      <div className="d-flex justify-content-center">
+        <h1 className="text-success mt-5 fw-bold mb-5">Super Login</h1>
+      </div>
+
+      <div className="container d-flex justify-content-center align-items-center" >
+        <div className="shadow rounded p-4 d-flex flex-column align-items-center w-50">
+          <input type="text" className="form-control mt-3 w-75" placeholder="Username" />
+          <input type="password" className="form-control mt-3 w-75" placeholder="Password" />
+          <button className="btn btn-success mt-3 w-25">Login</button>
         </div>
-
-        <div class="input-group">
-            <label for="password">Password</label>
-            <input type="password" id="password" placeholder="Enter your password" required/>
-        </div>
-
-        <div class="action-group">
-            <div class="remember">
-                <input type="checkbox" id="remember"/>
-                <label for="remember">Remember Me</label>
-            </div>
-        </div>
-
-        <button type="submit" class="btn-login">Login</button>
-    </form>
-
-   
-</div>
-
+      </div>
+    </>
   );
 }
 
