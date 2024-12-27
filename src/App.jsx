@@ -13,6 +13,7 @@ import AddUser from "./Components/AddUser";
 import AddStudent from "./Components/AddStudent";
 import AddTeach from "./Components/AddTeach";
 import Hod from "./Pages/Hod";
+import AddHod from "./Components/AddHod";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -32,7 +33,8 @@ function App() {
         <Route path="/Add" element={<AddUser/>}></Route>
         <Route path="/AddStudent" element={<AddStudent/>}></Route>
         <Route path="/AddTeacher" element={<AddTeach/>}></Route>
-        
+        <Route path="/AddHod" element={<AddHod/>}></Route>
+
 
       </Routes>
       {/* <Footer /> */}
