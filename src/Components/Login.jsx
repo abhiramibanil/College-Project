@@ -31,7 +31,7 @@ function Login() {
       if (result.status === 200) {
         sessionStorage.setItem("loggedUser", JSON.stringify(result.data));
         sessionStorage.setItem("access", result.data.access);
-        sessionStorage.setItem("username", result.data.name);
+        sessionStorage.setItem("username", result.data.full_name);
         sessionStorage.setItem("userId", result.data.id);
         sessionStorage.setItem("role",result.data.role)
 

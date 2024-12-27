@@ -7,6 +7,9 @@ import Grade from "../Components/Grade";
 import Assignment from "../Components/Assignment"; 
 import { Link } from "react-router-dom";
 import HodOverview from '../Components/HodOverview'; // Removed duplicate import
+import HodCourse from '../Components/HodCourse';
+import HodFaculty from '../Components/HodFaculty';
+import HodAnnounce from '../Components/HodAnnounce';
 
 function Hod() {
   const [activeFeature, setActiveFeature] = useState(null);
@@ -31,24 +34,21 @@ function Hod() {
                 <p className='mt-3'>Overview</p>
               </div>
 
-              <div className={`scnav ${activeFeature === "assign" ? "active" : ""}`} onClick={() => handleFeature("assign")}>
-                <i className="fa-solid fa-sheet-plastic"></i>
-                <p className='mt-3'>Assignments</p>
+              <div className={`scnav ${activeFeature === "assign" ? "active" : ""}`} onClick={() => handleFeature("cource")}>
+              <i class="fa-solid fa-file  size"></i>
+                <p className='mt-3'>Cources</p>
               </div>
 
-              <div className={`scnav ${activeFeature === "grade" ? "active" : ""}`} onClick={() => handleFeature("grade")}>
-                <i className="fa-solid fa-percent"></i>
-                <p className='mt-3'>Grades</p>
+              <div className={`scnav ${activeFeature === "grade" ? "active" : ""}`} onClick={() => handleFeature("announce")}>
+              <i class="fa-solid fa-volume-low size"></i>
+                <p className='mt-3'>Announcements</p>
               </div>
 
-              <div className={`scnav ${activeFeature === "notes" ? "active" : ""}`} onClick={() => handleFeature("notes")}>
-                <i className="fa-solid fa-book"></i>
-                <p className='mt-3'>Notes</p>
-              </div>
+              
 
-              <div className={`scnav ${activeFeature === "attend" ? "active" : ""}`} onClick={() => handleFeature("attend")}>
-                <i className="fa-solid fa-clipboard-user"></i>
-                <p className='mt-3'>Attendance</p>
+              <div className={`scnav ${activeFeature === "attend" ? "active" : ""}`} onClick={() => handleFeature("faculty")}>
+              <i class="fa-solid fa-chalkboard-user size"></i>
+                <p className=''>Facultys</p>
               </div>
             </div>
           </div>
@@ -83,10 +83,10 @@ function Hod() {
 
             {/* Dynamic Components Based on Active Feature */}
             {activeFeature === "hodoverview" && <HodOverview />}
-            {activeFeature === "attend" && <Graph />}
-            {activeFeature === "grade" && <Grade />}
-            {activeFeature === "assign" && <Assignment />}
-            {activeFeature === "notes" && <Stdnotes />}
+            {activeFeature === "cource" && <HodCourse />}
+            {activeFeature === "announce" && <HodAnnounce />}
+            {activeFeature === "faculty" && <HodFaculty />}
+            
           </div>
         </div>
       </div>
