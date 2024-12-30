@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import './AddStudent.css';
-import { registerApi } from '../services/allAPI'; 
+import { registerApi } from '../services/allAPI';
 import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify'; // Ensure toast is installed and imported
+import { toast } from 'react-toastify';
 
 function AddStudent() {
   const [userData, setUserData] = useState({
-    name: '',
+    full_name: '',
     dob: '',
     gender: '',
     email: '',
@@ -14,54 +14,70 @@ function AddStudent() {
     password: '',
     course: '',
     department: '',
+    batch: '',
+    role: 'student', // Add role here to send with registration data
   });
 
-
+  const [isLoading, setIsLoading] = useState(false); // To manage the loading state
   const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUserData({ ...userData, [name]: value });
-    
   };
 
   const handleRegistration = async (e) => {
     e.preventDefault();
+    setIsLoading(true); // Set loading state to true
 
-    const { full_name, dob, gender, email, phone, password, course, department } = userData;
+    const { full_name, dob, gender, email, phone, password, course, department, batch, role } = userData;
 
-    if (!full_name || !dob || !gender || !email || !phone ||  !password || !course || !department) {
+    // Check if any field is empty
+    if (!full_name || !dob || !gender || !email || !phone || !password || !course || !department || !batch) {
       toast.warning('Please fill out all fields');
+      setIsLoading(false); // Reset loading state
       return;
     }
 
     try {
-      const response = await registerApi(userData);
+      const response = await registerApi({
+        full_name,
+        dob,
+        gender,
+        email,
+        phone,
+        password,
+        course,
+        department,
+        batch,
+        role,
+      });
+
+      console.log('User Data:', userData); // Debug log to check data being sent
 
       if (response.status === 200) {
-        toast.success('Registration successful');
-        console.log(userData);
-        
+        toast.success('OTP sent successfully');
         setUserData({
           full_name: '',
           dob: '',
           gender: '',
           email: '',
           phone: '',
-          pincode: '',
-          place: '',
           password: '',
-          course: '',
-          department: '',
-          role:'student',
+          course: '', 
+          department: '', 
+          batch: '', 
+          role: 'student',
         });
-        navigate('/login'); 
+        navigate('/Otp', { state: { email } });
       } else {
         toast.error('Registration failed! Please try again.');
       }
     } catch (error) {
       console.error('Error during registration:', error);
       toast.error('An unexpected error occurred. Please try again.');
+    } finally {
+      setIsLoading(false); // Reset loading state after the request
     }
   };
 
@@ -72,7 +88,7 @@ function AddStudent() {
           <h1>Add Student Details</h1>
           <form onSubmit={handleRegistration}>
             <div className="form-group">
-              <label htmlFor="name">Full Name</label>
+              <label htmlFor="full_name">Full Name</label>
               <input
                 type="text"
                 id="full_name"
@@ -108,16 +124,28 @@ function AddStudent() {
             </div>
             <div className="form-group">
               <label htmlFor="phone">Phone Number</label>
-              <div className="phone-input">
-                <input
-                  type="text"
-                  id="phone"
-                  name="phone"
-                  placeholder="Enter your phone number"
-                  value={userData.phone}
-                  onChange={handleChange}
-                />
-              </div>
+              <input
+                type="tel"  // Changed to 'tel' type for better mobile support
+                id="phone"
+                name="phone"
+                placeholder="Enter your phone number"
+                value={userData.phone}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group">
+            <label htmlFor="batch">batch</label>
+              <select
+                id="batch"
+                name="batch"
+                value={userData.batch}
+                onChange={handleChange}
+              >
+                <option value="">Select batch</option>
+                <option  value="1">2020</option>
+                <option  value="2">2021</option>
+                
+              </select>
             </div>
             <div className="form-group">
               <label htmlFor="email">Email</label>
@@ -128,9 +156,9 @@ function AddStudent() {
                 placeholder="Enter your email"
                 value={userData.email}
                 onChange={handleChange}
+                autoComplete="email"
               />
             </div>
-          
             <div className="form-group">
               <label htmlFor="password">Password</label>
               <input
@@ -140,8 +168,10 @@ function AddStudent() {
                 placeholder="Enter Password"
                 value={userData.password}
                 onChange={handleChange}
+                autoComplete="new-password"
               />
             </div>
+
             <div className="form-group">
               <label htmlFor="course">Course</label>
               <select
@@ -151,11 +181,11 @@ function AddStudent() {
                 onChange={handleChange}
               >
                 <option value="">Select Course</option>
-                <option value="Chemical Engineering">Chemical Engineering</option>
-                <option value="Computer Engineering">Computer Engineering</option>
-                <option value="Civil Engineering">Civil Engineering</option>
-                <option value="Electronic Engineering">Electronic Engineering</option>
-                <option value="EC Engineering">EC Engineering</option>
+                <option  value="1">Chemical Engineering</option>
+                <option  value="2">Computer Engineering</option>
+                <option  value="3">Civil Engineering</option>
+                <option  value="4">Electronic Engineering</option>
+                <option value="5">EC Engineering</option>
               </select>
             </div>
             <div className="form-group">
@@ -167,16 +197,16 @@ function AddStudent() {
                 onChange={handleChange}
               >
                 <option value="">Select Department</option>
-                <option value="B.tech">B.tech</option>
-                <option value="M.tech">M.tech</option>
+                <option value="1">B.tech</option>
+                <option  value="2">M.tech</option>
               </select>
             </div>
             <div className="form-buttons">
               <button type="button" className="cancel" onClick={() => navigate('/')}>
                 Cancel
               </button>
-              <button type="submit" className="create" onClick={handleRegistration}>
-                Create 
+              <button type="submit" className="create" disabled={isLoading}>
+                {isLoading ? 'Registering...' : 'Create'}
               </button>
             </div>
           </form>

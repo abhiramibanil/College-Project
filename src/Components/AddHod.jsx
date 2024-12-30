@@ -48,7 +48,7 @@ function AddHod() {
             password: '',
             role:'hod',
           });
-          navigate('/login');
+          navigate('/Otp');
         } else {
           toast.error('Registration failed! Please try again.');
         }

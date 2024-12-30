@@ -52,7 +52,7 @@ function AddTeach() {
           password: '',
         //  photo
         });
-        navigate('/login');
+        navigate('/Otp');
       } else {
         toast.error('Registration failed! Please try again.');
       }
