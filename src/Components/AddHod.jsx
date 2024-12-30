@@ -27,9 +27,9 @@ function AddHod() {
     const handleRegistration = async (e) => {
       e.preventDefault();
   
-      const { full_name, dob, gender, email, phone, pincode, place, password, course, department, batch } = userData;
+      const { full_name, dob, gender, email, phone,  password, course, department, batch } = userData;
   
-      if (!full_name || !dob || !gender || !email || !phone || !pincode || !place || !password || !course || !department || !batch) {
+      if (!full_name || !dob || !gender || !email || !phone || !password || !course || !department || !batch) {
         toast.warning('Please fill out all fields');
         return;
       }
@@ -45,8 +45,6 @@ function AddHod() {
             gender: '',
             email: '',
             phone: '',
-            pincode: '',
-            place: '',
             password: '',
             role:'hod',
           });

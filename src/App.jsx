@@ -34,8 +34,6 @@ function App() {
         <Route path="/AddStudent" element={<AddStudent/>}></Route>
         <Route path="/AddTeacher" element={<AddTeach/>}></Route>
         <Route path="/AddHod" element={<AddHod/>}></Route>
-
-
       </Routes>
       {/* <Footer /> */}
       <ToastContainer/>

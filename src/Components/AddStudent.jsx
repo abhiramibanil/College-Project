@@ -11,8 +11,6 @@ function AddStudent() {
     gender: '',
     email: '',
     phone: '',
-    pincode: '',
-    place: '',
     password: '',
     course: '',
     department: '',
@@ -30,9 +28,9 @@ function AddStudent() {
   const handleRegistration = async (e) => {
     e.preventDefault();
 
-    const { full_name, dob, gender, email, phone, pincode, place, password, course, department } = userData;
+    const { full_name, dob, gender, email, phone, password, course, department } = userData;
 
-    if (!full_name || !dob || !gender || !email || !phone || !pincode || !place || !password || !course || !department) {
+    if (!full_name || !dob || !gender || !email || !phone ||  !password || !course || !department) {
       toast.warning('Please fill out all fields');
       return;
     }
@@ -132,16 +130,7 @@ function AddStudent() {
                 onChange={handleChange}
               />
             </div>
-            <div className="form-group">
-              <label htmlFor="image"></label>
-              <input
-                type="image"
-                id="image"
-                name="image"
-                value={userData.image}
-                onChange={handleChange}
-              />
-            </div>
+          
             <div className="form-group">
               <label htmlFor="password">Password</label>
               <input
