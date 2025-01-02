@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { verifyOtpApi, resendOtpApi } from '../services/allAPI';
 import { toast } from 'react-toastify';
 
@@ -9,6 +9,7 @@ function Otp() {
   const [otp, setOtp] = useState('');
   const [isLoading, setIsLoading] = useState(false); // Manage loading state for buttons
   const [isResendLoading, setIsResendLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleOtpChange = (e) => {
     setOtp(e.target.value);
@@ -25,6 +26,7 @@ function Otp() {
       const response = await verifyOtpApi({ otp, email }); // Include email in the API payload
       if (response.status === 200) {
         toast.success('OTP verified successfully!');
+        navigate("/")
       } else {
         toast.error('Invalid OTP. Please try again.');
       }
@@ -41,6 +43,7 @@ function Otp() {
       const response = await resendOtpApi({ email }); // Include email in the API payload
       if (response.status === 200) {
         toast.success('OTP resent successfully!');
+      
         console.log('OTP resent successfully!');
         
       } else {
