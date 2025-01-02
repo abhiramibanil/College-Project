@@ -1,8 +1,16 @@
 import axios from 'axios';
 
 // Generic API wrapper function
-export const commonAPI = async (httpRequestType, url, reqBody, reqHeader) => {
+export const commonAPI = async (httpRequestType, url, reqBody, reqHeader = {}) => {
   try {
+    // If an authentication token is required, make sure it's added to the headers
+    const token = localStorage.getItem("authToken"); // Or get it from your state/store
+
+    // Add Authorization header if token is available
+    if (token) {
+      reqHeader['Authorization'] = `Bearer ${access}`;
+    }
+
     // Validate required inputs
     if (!httpRequestType || !url) {
       throw new Error('HTTP request type and URL must be provided');
