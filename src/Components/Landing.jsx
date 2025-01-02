@@ -12,23 +12,26 @@ function Landing() {
     sessionStorage.clear();
     
 };
-  const [uniDetail, setUniDetail] = useState([
-    {
-      icon: <i class="fa-solid fa-magnifying-glass fmg"></i>,
-      p1: "Find a course",
-      p2: "Search by subject, course or region to find the right course for you.",
-    },
-    {
-      icon: <i class="fa-regular fa-calendar-days fmg"></i>,
-      p1: "Find a uiversity",
-      p2: "Search for Courses to find out about courses and more. ",
-    },
-    {
-      icon: <i class="fa-solid fa-house fmg"></i>,
-      p1: "Find an open day",
-      p2: "Search and book open days to help you make the right choice.",
-    },
-  ]);
+const [uniDetail, setUniDetail] = useState([
+  {
+    icon: <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQ0uNyu5bhFP72eISTo_6zfxowBADsY61Rw&s" alt="Chairman" />,
+    p1: " Prof.Dr Freddy Frenandas",
+    p2: "Chairman",
+    p3:"Phd in IT  & Reserach Coordinator Dept of Information Technology ",
+  },
+  {
+    icon:  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6J5Bsi7UrlOsw-9agdJ8ekj3SqLFypPmF65EHjDBri92JKDk1alQUK6ean1BzmjF9a7w&usqp=CAU" alt="Find a course" />,
+    p1: "Prof. Dr Sanjna Mathew",
+    p2: "Principal",
+    p3: "phd in Structural Engineering (Mtech)",
+  },
+  {
+    icon:  <img src="https://www.shcollege.ac.in/wp-content/uploads/Images/Staff/Teaching/Jeleeta-Rose-C-N.png" alt="Find a course" />,
+    p1: "Prof.Rhithika Nambiyar",
+    p2: "Vice Pricipal & HOD of Civil",
+    p3: "Mtech (Civil) & Phd scholar in Civil",
+  },
+]);
   return (
     <>
       <>
@@ -85,10 +88,10 @@ function Landing() {
               <div className="detail-box">
                 {uni.icon}
                 <div className="detail-box-text">
-                  <p>{uni.p1}</p>
-                  <p>{uni.p2}</p>
-                  <p>
-                    Get Started <i class="fa-solid fa-arrow-right"></i>
+                  <p className="ms-1">{uni.p1}</p>
+                  <p className="ms-2">{uni.p2}</p>
+                  <p className="ms-2">
+                  {uni.p3}
                   </p>
                 </div>
               </div>

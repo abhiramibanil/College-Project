@@ -20,3 +20,7 @@ export const verifyOtpApi = async (otpDetails) => {
 export const resendOtpApi = async (userDetails) => {
   return await commonAPI('POST', `${serverUrl}/resend_otp/`, userDetails, '');
 };
+
+export const departmentApi = async () => {
+  return await commonAPI('GET', `${serverUrl}/departments-list/`, '', '');
+};
