@@ -44,6 +44,7 @@ function Otp() {
       const response = await resendOtpApi({ email }); 
       if (response.status === 200) {
         toast.success('OTP resent successfully!');
+      
         console.log('OTP resent successfully!');
         
       } else {
