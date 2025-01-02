@@ -17,6 +17,7 @@ import AddHod from "./Components/AddHod";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Otp from "./Components/Otp";
+import CourseDescription from "./Components/CourseDescription";
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
         <Route path="/AddTeacher" element={<AddTeach/>}></Route>
         <Route path="/AddHod" element={<AddHod/>}></Route>
         <Route path="/Otp" element={<Otp/>}></Route>
+        <Route path="/coursedescription" element={<CourseDescription/>}></Route>
 
       </Routes>
       {/* <Footer /> */}

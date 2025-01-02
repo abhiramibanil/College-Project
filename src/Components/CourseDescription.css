@@ -1,0 +1,51 @@
+.cd-main{
+    margin-left: 350px;
+}
+.c-description{
+    height: 500px;
+    width: 75%;
+    border-radius:20px;
+    margin-top: 50px;
+    background-color:rgb(202, 227, 221);
+}
+.c-description-head{
+    padding: 50px;
+   
+}
+.cd-para{
+    margin: 10px;
+}
+.batch-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+.btech{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: rgb(209, 197, 74);
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    transition: all 0.3s;
+
+}
+.mtech{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: rgb(157, 210, 67);
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    transition: all 0.3s;
+
+}
+.mtech:hover {
+    transform: translateY(-15px);
+  }
+  .btech:hover {
+    transform: translateY(-15px);
+  }
