@@ -8,7 +8,7 @@ export const commonAPI = async (httpRequestType, url, reqBody, reqHeader = {}) =
 
     // Add Authorization header if token is available
     if (token) {
-      reqHeader['Authorization'] = `Bearer ${access}`;
+      reqHeader['Authorization'] = `Bearer ${token}`;
     }
 
     // Validate required inputs
@@ -18,20 +18,20 @@ export const commonAPI = async (httpRequestType, url, reqBody, reqHeader = {}) =
 
     // Prepare request configuration
     const reqConfig = {
-      method: httpRequestType, // HTTP method (GET, POST, etc.)
-      url: url, // API endpoint
-      ...(httpRequestType !== 'GET' && { data: reqBody }), // Include data for non-GET requests
-      headers: reqHeader ? reqHeader : { "Content-Type": "application/json" }, // Default headers
-      timeout: 10000, // 10-second timeout
+      method: httpRequestType,
+      url: url, 
+      ...(httpRequestType !== 'GET' && { data: reqBody }), 
+      headers: reqHeader ? reqHeader : { "Content-Type": "application/json" },
+      timeout: 10000,
     };
 
-    // Execute the request and return the result
+    
     const result = await axios(reqConfig);
     return result;
   } catch (err) {
-    console.error('API Error:', err); // Log error for debugging
+    console.error('API Error:', err); 
 
-    // Handle error based on its type
+    
     if (err.response) {
       // Server responded with a status other than 2xx
       return { status: err.response.status, data: err.response.data };

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./homeinfo.css";
 import { departmentApi } from "../services/allAPI";
+import { Link, Links } from "react-router-dom";
 
 function HomeInfo() {
   const [departments, setDepartments] = useState([]);
@@ -50,6 +51,7 @@ function HomeInfo() {
           const imageUrl = department.photo; // Assuming the response contains photo URL
 
           return (
+            
             <div className="course hover-effect" key={index}>
               <div>
                 <img
@@ -59,9 +61,12 @@ function HomeInfo() {
                 />
               </div>
               <p className="cp1">{department.department_name}</p>
-              <p className="text-warning">
+              <Link to={{
+                pathname: "/coursedescription" }} state={{ department }} style={{textDecoration:'none'}}> 
+                <p className="text-warning">
                 See Course Guide <i className="fa-solid fa-arrow-right"></i>
-              </p>
+              </p></Link>
+             
             </div>
           );
         })}

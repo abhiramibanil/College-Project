@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { commonAPI } from './commonAPI';
 import { serverUrl } from './serverurl';
 
@@ -23,4 +24,21 @@ export const resendOtpApi = async (userDetails) => {
 
 export const departmentApi = async () => {
   return await commonAPI('GET', `${serverUrl}/departments-list/`, '', '');
+};
+export const addDepartmentApi = async (formData, reqHeader) => {
+  try {
+    const response = await axios.post(
+      'http://192.168.1.85:8000/api/departments/',
+      formData,
+      { headers: reqHeader }
+    );
+    return response;
+  } catch (err) {
+    throw err;
+  }
+};
+
+
+export const deleteDeptApi = async (id) => {
+  return await commonAPI('DELETE', `${serverUrl}/departments/${id}/`, '', '');
 };
