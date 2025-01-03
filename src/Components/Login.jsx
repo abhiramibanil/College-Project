@@ -20,7 +20,6 @@ function Login() {
     e.preventDefault();
 
 
-
     if (!userData.email || !userData.password) {
       toast.error("Please enter all fields");
       return;
