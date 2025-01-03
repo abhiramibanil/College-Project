@@ -38,7 +38,6 @@ function App() {
         <Route path="/AddHod" element={<AddHod/>}></Route>
         <Route path="/Otp" element={<Otp/>}></Route>
         <Route path="/coursedescription" element={<CourseDescription/>}></Route>
-
       </Routes>
       {/* <Footer /> */}
       <ToastContainer/>
