@@ -40,8 +40,6 @@ function App() {
         <Route path="/Otp" element={<Otp/>}></Route>
         <Route path="/coursedescription" element={<CourseDescription/>}></Route>
         <Route path="/addDepartment" element={<AddDepartment/>}></Route>
-
-
       </Routes>
       {/* <Footer /> */}
       <ToastContainer/>

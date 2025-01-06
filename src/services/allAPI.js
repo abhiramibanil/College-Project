@@ -30,15 +30,30 @@ export const addDepartmentApi = async (formData, reqHeader) => {
     const response = await axios.post(
       'http://192.168.1.85:8000/api/departments/',
       formData,
-      { headers: reqHeader }
+      {
+        headers: {
+          ...reqHeader, // Include authorization and other necessary headers
+          'Content-Type': 'multipart/form-data', // Ensure this matches backend expectations
+        },
+      }
     );
     return response;
   } catch (err) {
-    throw err;
+    console.error('Error in addDepartmentApi:', err.response || err.message);
+    throw err; // Let the calling function handle errors
   }
 };
 
 
-export const deleteDeptApi = async (id) => {
-  return await commonAPI('DELETE', `${serverUrl}/departments/${id}/`, '', '');
+
+export const deleteDeptApi = async (id, token) => {
+  return await commonAPI('DELETE', `${serverUrl}/departments/${id}/`, '', {
+    Authorization: `Bearer ${token}`,
+  });
+};
+
+export const editDeptApi = async (id, deptdetails, token) => {
+  return await commonAPI('PUT', `${serverUrl}/departments/${id}/`, deptdetails, {
+    Authorization: `Bearer ${token}`,
+  });
 };

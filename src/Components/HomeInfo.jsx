@@ -49,7 +49,6 @@ function HomeInfo() {
       <div className="course-box">
         {departments.map((department, index) => {
           const imageUrl = department.photo; // Assuming the response contains photo URL
-
           return (
             
             <div className="course hover-effect" key={index}>

@@ -45,23 +45,22 @@ function Overview() {
                 </p>
               </div>
             </div>
+            <div className="tab-3 shadow">
+              <div className="tab-icon">
+                <i class="fa-solid fa-book size"></i>
+                <h6>Attedence</h6>
+              </div>
+              <div className="tab-content">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur accusamus nostrum rem
+                  aperiam ullam adipisci incidunt! Itaque!
+                </p>
+              </div>
+            </div>
            
           </div>
         </div>
-        <div className="middle2">
-          <div className="notification-bar shadow">
-            <div className="notification-icon">
-              <i class="fa-solid fa-comment size"></i>
-              <h6>Chat Box</h6>
-            </div>
-            <div className="notification-content">
-              <p>
-                Lorem ipsum dolor sit amet consectetur accusamus nostrum rem
-                aperiam ullam adipisci incidunt! Itaque!
-              </p>
-            </div>
-          </div>
-        </div>
+        
       </div>
     </>
   );
