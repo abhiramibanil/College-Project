@@ -6,6 +6,8 @@ import HodOverview from '../Components/HodOverview';
 import HodCourse from '../Components/HodCourse';
 import HodFaculty from '../Components/HodFaculty';
 import HodAnnounce from '../Components/HodAnnounce';
+import FacultyAtendence from '../Components/FacultyAtendence';
+
 
 function Hod() {
   const [activeFeature, setActiveFeature] = useState("hodoverview");
@@ -23,6 +25,8 @@ function Hod() {
         return <HodAnnounce />;
       case "faculty":
         return <HodFaculty />;
+        case "Attendence":
+        return <FacultyAtendence />;
       default: 
       case "hodoverview":
       return <HodOverview />;
@@ -70,6 +74,13 @@ function Hod() {
             >
               <i className="fa-solid fa-chalkboard-user size"></i>
               <p className="mt-3">Faculty</p>
+            </div>
+            <div
+              className={`scnav ${activeFeature === "Attendence" ? "active" : ""}`}
+              onClick={() => handleFeature("Attendence")}
+            >
+              <i className="fa-solid fa-chalkboard-user size"></i>
+              <p className="mt-3">Attendence</p>
             </div>
           </div>
         </div>
