@@ -19,6 +19,7 @@ import AddDepartment from "./Components/AddDepartment";
 import FacultyList from "./Components/FacultyList";
 
 
+
 function App() {
   return (
     <>
@@ -37,9 +38,8 @@ function App() {
         <Route path="/AddHod" element={<AddHod/>}></Route>
         <Route path="/Otp" element={<Otp/>}></Route>
         <Route path="/coursedescription" element={<CourseDescription/>}></Route>
-       <Route path="/addDepartment" element={<AddDepartment/>}></Route>
-       <Route path="/facultyList" element={<FacultyList/>}></Route>
-
+        <Route path="/addDepartment" element={<AddDepartment/>}></Route>
+        <Route path="/facutlylist" element={<FacultyList/>}></Route>
       </Routes>
       {/* <Footer /> */}
       <ToastContainer/>
