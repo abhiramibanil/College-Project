@@ -13,54 +13,50 @@ function AddTeach() {
     phone: "",
     password: "",
     department: "",
-    role: "faculty ", // Default role
+    role: "faculty", // Default role (fixed)
   });
 
   const [isLoading, setIsLoading] = useState(false); // To manage the loading state
   const navigate = useNavigate();
 
+  // Handle input change
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setUserData({ ...userData, [name]: value });
+    setUserData({ ...userData, [name]: value.trim() });
   };
 
+  // Input validation
+  const validateInputs = () => {
+    const { full_name, dob, gender, email, phone, password, department } = userData;
+
+    if (!full_name.trim()) return "Full Name is required.";
+    if (!dob) return "Date of Birth is required.";
+    if (!gender) return "Gender is required.";
+    if (!/^\S+@\S+\.\S+$/.test(email)) return "Invalid email format.";
+    if (!/^\d{10}$/.test(phone)) return "Phone number must be 10 digits.";
+    if (password.length < 6) return "Password must be at least 6 characters long.";
+    if (!department) return "Department is required.";
+    
+    return null; // No validation errors
+  };
+
+  // Handle registration
   const handleRegistration = async (e) => {
     e.preventDefault();
-    setIsLoading(true); // Set loading state to true
+    setIsLoading(true); // Start loading
 
-    const { full_name, dob, gender, email, phone, password, department, role } =
-      userData;
-
-    if (
-      !full_name ||
-      !dob ||
-      !gender ||
-      !email ||
-      !phone ||
-      !password ||
-      !department
-    ) {
-      toast.warning("Please fill out all fields");
-      setIsLoading(false); // Reset loading state
+    const error = validateInputs();
+    if (error) {
+      toast.warning(error);
+      setIsLoading(false);
       return;
     }
 
     try {
-      const response = await registerApi({
-        full_name,
-        dob,
-        gender,
-        email,
-        phone,
-        password,
-        department,
-        role,
-      });
-
-      console.log("User Data:", userData); // Debug log to check data being sent
+      const response = await registerApi(userData);
 
       if (response.status === 200) {
-        toast.success("OTP sent successful");
+        toast.success("OTP sent successfully.");
         setUserData({
           full_name: "",
           dob: "",
@@ -68,18 +64,18 @@ function AddTeach() {
           email: "",
           phone: "",
           password: "",
-          role: "hod",
-          //  photo
+          department: "",
+          role: "faculty",
         });
-        navigate("/Otp", { state: { email } });
+        navigate("/Otp", { state: { email: userData.email } });
       } else {
         toast.error("Registration failed! Please try again.");
       }
     } catch (error) {
-      console.error("Error during registration:", error);
-      toast.error("An unexpected error occurred. Please try again.");
+      console.error("Error during registration:", error.response?.data || error.message);
+      toast.error(error.response?.data?.error || "An unexpected error occurred. Please try again.");
     } finally {
-      setIsLoading(false); // Reset loading state after the request
+      setIsLoading(false); // Reset loading state
     }
   };
 
@@ -99,6 +95,7 @@ function AddTeach() {
                 placeholder="Enter your full name"
                 value={userData.full_name}
                 onChange={handleChange}
+                disabled={isLoading}
               />
             </div>
             {/* Date of Birth Field */}
@@ -110,6 +107,7 @@ function AddTeach() {
                 name="dob"
                 value={userData.dob}
                 onChange={handleChange}
+                disabled={isLoading}
               />
             </div>
             {/* Gender Field */}
@@ -120,6 +118,7 @@ function AddTeach() {
                 name="gender"
                 value={userData.gender}
                 onChange={handleChange}
+                disabled={isLoading}
               >
                 <option value="">Select Gender</option>
                 <option value="male">Male</option>
@@ -137,6 +136,7 @@ function AddTeach() {
                 placeholder="Enter your phone number"
                 value={userData.phone}
                 onChange={handleChange}
+                disabled={isLoading}
               />
             </div>
             {/* Email Field */}
@@ -150,6 +150,7 @@ function AddTeach() {
                 value={userData.email}
                 onChange={handleChange}
                 autoComplete="email"
+                disabled={isLoading}
               />
             </div>
             {/* Password Field */}
@@ -163,6 +164,7 @@ function AddTeach() {
                 value={userData.password}
                 onChange={handleChange}
                 autoComplete="new-password"
+                disabled={isLoading}
               />
             </div>
             {/* Department Field */}
@@ -173,6 +175,7 @@ function AddTeach() {
                 name="department"
                 value={userData.department}
                 onChange={handleChange}
+                disabled={isLoading}
               >
                 <option value="">Select Department</option>
                 <option value="1">B.Tech</option>

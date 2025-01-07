@@ -345,7 +345,7 @@ function AddDepartment() {
                     {modalData.photo && typeof modalData.photo === 'string' ? (
                       <div>
                         <img
-                          src={`http://192.168.1.85:8000${modalData.photo}`}
+                          src={`http://127.0.0.1:8000${modalData.photo}`}
                           alt="Current department"
                           style={{ width: '100px', height: '80px', objectFit: 'cover' }}
                         />

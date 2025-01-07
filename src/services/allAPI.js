@@ -28,7 +28,7 @@ export const departmentApi = async () => {
 export const addDepartmentApi = async (formData, reqHeader) => {
   try {
     const response = await axios.post(
-      'http://192.168.1.85:8000/api/departments/',
+      '${serverUrl}/departments/',
       formData,
       {
         headers: {
