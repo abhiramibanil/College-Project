@@ -77,7 +77,7 @@ function FacultyList() {
                 <th>Actions</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody>   
               {faculty.map((fac, index) => (
                 <tr key={fac.id}>
                   <td>{index + 1}</td>

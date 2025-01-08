@@ -3,7 +3,7 @@ import "./hodStyle.css";
 import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
 import HodOverview from '../Components/HodOverview';
-import HodCourse from '../Components/HodCourse';
+//import HodCourse from '../Components/HodCourse';
 import HodFaculty from '../Components/HodFaculty';
 import HodAnnounce from '../Components/HodAnnounce';
 import FacultyAtendence from '../Components/FacultyAtendence';
@@ -19,8 +19,8 @@ function Hod() {
   const renderFeature = () => {
     switch (activeFeature) {
 
-      case "cource":
-        return <HodCourse />;
+      // case "cource":
+      //   return <HodCourse />;
       case "announce":
         return <HodAnnounce />;
       case "faculty":
@@ -52,13 +52,13 @@ function Hod() {
               <p className="mt-3">Overview</p>
             </div>
 
-            <div
+            {/* <div
               className={`scnav ${activeFeature === "cource" ? "active" : ""}`}
               onClick={() => handleFeature("cource")}
             >
               <i className="fa-solid fa-file size"></i>
               <p className="mt-3">Courses</p>
-            </div>
+            </div> */}
 
             <div
               className={`scnav ${activeFeature === "announce" ? "active" : ""}`}
