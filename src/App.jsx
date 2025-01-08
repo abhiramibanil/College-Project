@@ -17,8 +17,7 @@ import Otp from "./Components/Otp";
 import CourseDescription from "./Components/CourseDescription";
 import AddDepartment from "./Components/AddDepartment";
 import FacultyList from "./Components/FacultyList";
-
-
+import ProfileEdit from "./Components/ProfileEdit";
 
 function App() {
   return (
@@ -40,6 +39,7 @@ function App() {
         <Route path="/coursedescription" element={<CourseDescription/>}></Route>
         <Route path="/addDepartment" element={<AddDepartment/>}></Route>
         <Route path="/facutlylist" element={<FacultyList/>}></Route>
+        <Route path="/editprofile" element={<ProfileEdit/>}></Route>
       </Routes>
       {/* <Footer /> */}
       <ToastContainer/>

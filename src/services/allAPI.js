@@ -21,10 +21,12 @@ export const verifyOtpApi = async (otpDetails) => {
 export const resendOtpApi = async (userDetails) => {
   return await commonAPI('POST', `${serverUrl}/resend_otp/`, userDetails, '');
 };
+
 //department
 export const departmentApi = async () => {
   return await commonAPI('GET', `${serverUrl}/departments-list/`, '', '');
 };
+
 export const addDepartmentApi = async (formData, reqHeader) => {
   try {
     const response = await axios.post(
@@ -60,6 +62,7 @@ export const editDeptApi = async (id, deptdetails, token) => {
 export const FacultyApi = async () => {
   return await commonAPI('GET', `${serverUrl}/falist/`, '', '');
 };
+
 //Addfacultyapi
 export const addFacultyApi = async (formData, reqHeader) => {
   try {
