@@ -22,12 +22,17 @@ export const resendOtpApi = async (userDetails) => {
   return await commonAPI('POST', `${serverUrl}/resend_otp/`, userDetails, '');
 };
 
+
 //department list
+
+
 export const departmentApi = async () => {
   return await commonAPI('GET', `${serverUrl}/departments-list/`, '', '');
 };
 
+
 //add department
+
 export const addDepartmentApi = async (formData, reqHeader) => {
   try {
     const response = await axios.post(
@@ -49,6 +54,7 @@ export const addDepartmentApi = async (formData, reqHeader) => {
 
 
 //delete department
+
 export const deleteDeptApi = async (id, token) => {
   return await commonAPI('DELETE', `${serverUrl}/departments/${id}/`, '', {
     Authorization: `Bearer ${token}`,
@@ -62,6 +68,7 @@ export const editDeptApi = async (id, deptdetails, token) => {
     Authorization: `Bearer ${token}`,
   });
 };
+
 
 
 
@@ -92,3 +99,30 @@ export const editFacultyApi = async (id, facultydetails, token) => {
     Authorization: `Bearer ${token}`,
   });
 };
+
+//faculty -api
+export const FacultyApi = async () => {
+  return await commonAPI('GET', `${serverUrl}/falist/`, '', '');
+};
+
+//Addfacultyapi
+export const addFacultyApi = async (formData, reqHeader) => {
+  try {
+    const response = await axios.post(
+      'http://192.168.1.85:8000/api/Faculty/',
+      formData,
+      {
+        headers: {
+          ...reqHeader, // Include authorization and other necessary headers
+          'Content-Type': 'multipart/form-data', // Ensure this matches backend expectations
+        },
+      }
+    );
+    return response;
+  } catch (err) {
+    console.error('Error in addFacultyApi:', err.response || err.message);
+    throw err; // Let the calling function handle errors
+  }
+};
+
+

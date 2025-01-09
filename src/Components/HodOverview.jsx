@@ -55,8 +55,7 @@ function HodOverview() {
                             </div>
                             <div className="tab-content">
                                 <p>
-                                    Lorem ipsum dolor sit amet consectetur accusamus nostrum rem
-                                    aperiam ullam adipisci incidunt! Itaque!
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas iure suscipit sed ab magni nostrum rerum quam quos at culpa! Modi architecto veritatis, sequi fuga officia quaerat hic delectus maiores!
                                 </p>
                             </div>
                         </div>

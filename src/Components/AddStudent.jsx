@@ -159,7 +159,7 @@ function AddStudent() {
                 name="email"
                 placeholder="Enter your email"
                 value={userData.email}
-                onChange={handleChange}
+                onChange={handleChange} 
                 autoComplete="email"
               />
             </div>

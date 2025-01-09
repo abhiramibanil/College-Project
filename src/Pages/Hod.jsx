@@ -3,9 +3,11 @@ import "./hodStyle.css";
 import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
 import HodOverview from '../Components/HodOverview';
-import HodCourse from '../Components/HodCourse';
+//import HodCourse from '../Components/HodCourse';
 import HodFaculty from '../Components/HodFaculty';
 import HodAnnounce from '../Components/HodAnnounce';
+import FacultyAtendence from '../Components/FacultyAtendence';
+
 
 function Hod() {
   const [activeFeature, setActiveFeature] = useState("hodoverview");
@@ -17,12 +19,14 @@ function Hod() {
   const renderFeature = () => {
     switch (activeFeature) {
 
-      case "cource":
-        return <HodCourse />;
+      // case "cource":
+      //   return <HodCourse />;
       case "announce":
         return <HodAnnounce />;
       case "faculty":
         return <HodFaculty />;
+        case "Attendence":
+        return <FacultyAtendence />;
       default: 
       case "hodoverview":
       return <HodOverview />;
@@ -48,13 +52,13 @@ function Hod() {
               <p className="mt-3">Overview</p>
             </div>
 
-            <div
+            {/* <div
               className={`scnav ${activeFeature === "cource" ? "active" : ""}`}
               onClick={() => handleFeature("cource")}
             >
               <i className="fa-solid fa-file size"></i>
               <p className="mt-3">Courses</p>
-            </div>
+            </div> */}
 
             <div
               className={`scnav ${activeFeature === "announce" ? "active" : ""}`}
@@ -70,6 +74,13 @@ function Hod() {
             >
               <i className="fa-solid fa-chalkboard-user size"></i>
               <p className="mt-3">Faculty</p>
+            </div>
+            <div
+              className={`scnav ${activeFeature === "Attendence" ? "active" : ""}`}
+              onClick={() => handleFeature("Attendence")}
+            >
+              <i className="fa-solid fa-chalkboard-user size"></i>
+              <p className="mt-3">Attendence</p>
             </div>
           </div>
         </div>

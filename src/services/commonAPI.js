@@ -3,8 +3,13 @@ import axios from 'axios';
 // Generic API wrapper function
 export const commonAPI = async (httpRequestType, url, reqBody, reqHeader = {}) => {
   try {
-    // If an authentication token is required, make sure it's added to the headers
-    const token = localStorage.getItem("authToken"); // Or get it from your state/store
+    // Ensure reqHeader is always an object
+    if (typeof reqHeader !== 'object' || reqHeader === null) {
+      reqHeader = {}; // Default to an empty object
+    }
+
+    // Retrieve the token from sessionStorage
+    const token = sessionStorage.getItem("access"); // Or get it from your state/store
 
     // Add Authorization header if token is available
     if (token) {
@@ -19,19 +24,19 @@ export const commonAPI = async (httpRequestType, url, reqBody, reqHeader = {}) =
     // Prepare request configuration
     const reqConfig = {
       method: httpRequestType,
-      url: url, 
-      ...(httpRequestType !== 'GET' && { data: reqBody }), 
-      headers: reqHeader ? reqHeader : { "Content-Type": "application/json" },
+      url: url,
+      ...(httpRequestType !== 'GET' && { data: reqBody }), // Include reqBody for non-GET requests
+      headers: reqHeader,
       timeout: 10000,
     };
 
-    
+    // Perform the API request
     const result = await axios(reqConfig);
     return result;
   } catch (err) {
-    console.error('API Error:', err); 
+    console.error('API Error:', err);
 
-    
+    // Enhanced error handling
     if (err.response) {
       // Server responded with a status other than 2xx
       return { status: err.response.status, data: err.response.data };
