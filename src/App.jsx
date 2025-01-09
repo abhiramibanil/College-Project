@@ -18,6 +18,12 @@ import CourseDescription from "./Components/CourseDescription";
 import AddDepartment from "./Components/AddDepartment";
 import FacultyList from "./Components/FacultyList";
 import ProfileEdit from "./Components/ProfileEdit";
+import AddDepartment from "./Components/AddDepartment";
+import AdminPortal from "./Components/AdminPortal";
+import AdminHome from "./Components/AdminHome";
+import Settings from "./Components/Settings";
+import Profile from "./Components/Profile";
+import FacultyList from "./Components/FacultyList";
 
 function App() {
   return (
@@ -37,6 +43,12 @@ function App() {
         <Route path="/AddHod" element={<AddHod/>}></Route>
         <Route path="/Otp" element={<Otp/>}></Route>
         <Route path="/coursedescription" element={<CourseDescription/>}></Route>
+<Route path ="/facultyList" element={<FacultyList/>}></Route>
+        <Route path="/addDepartment" element={<AddDepartment/>}></Route>
+        <Route path="/admin" element={<AdminPortal/>}></Route>
+        <Route path="/adminhome" element={<AdminHome/>}></Route>
+        <Route path="/settings" element={<Settings/>}></Route>
+        <Route path="/profile" element={<Profile/>}></Route>
         <Route path="/addDepartment" element={<AddDepartment/>}></Route>
         <Route path="/facutlylist" element={<FacultyList/>}></Route>
         <Route path="/editprofile" element={<ProfileEdit/>}></Route>

@@ -3,6 +3,8 @@ import './AddStudent.css';
 import { registerApi } from '../services/allAPI';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import AdminSideNav from './AdminSideNav'
+
 
 function AddStudent() {
   const [userData, setUserData] = useState({
@@ -82,6 +84,8 @@ function AddStudent() {
   };
 
   return (
+    <>
+    <AdminSideNav/>
     <div className="add-user-container">
       <div className="main">
         <div className="form-container">
@@ -213,6 +217,7 @@ function AddStudent() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 
