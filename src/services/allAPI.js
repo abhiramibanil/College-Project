@@ -22,9 +22,12 @@ export const resendOtpApi = async (userDetails) => {
   return await commonAPI('POST', `${serverUrl}/resend_otp/`, userDetails, '');
 };
 
+//department list
 export const departmentApi = async () => {
   return await commonAPI('GET', `${serverUrl}/departments-list/`, '', '');
 };
+
+//add department
 export const addDepartmentApi = async (formData, reqHeader) => {
   try {
     const response = await axios.post(
@@ -45,15 +48,47 @@ export const addDepartmentApi = async (formData, reqHeader) => {
 };
 
 
-
+//delete department
 export const deleteDeptApi = async (id, token) => {
   return await commonAPI('DELETE', `${serverUrl}/departments/${id}/`, '', {
     Authorization: `Bearer ${token}`,
   });
 };
 
+
+//edit department
 export const editDeptApi = async (id, deptdetails, token) => {
   return await commonAPI('PUT', `${serverUrl}/departments/${id}/`, deptdetails, {
+    Authorization: `Bearer ${token}`,
+  });
+};
+
+
+
+export const facultyApi = async (token) => {
+  try {
+    const response = await axios.get(`${serverUrl}/falist/`, {
+      headers: {
+        Authorization: `Bearer ${token}`, // Pass token in Authorization header
+      },
+    });
+    return response;
+  } catch (error) {
+    console.error("Error fetching faculty data", error);
+    throw error; // Rethrow error for proper handling in the component
+  }
+};
+
+//delete faculty
+export const deleteFacultyApi = async (id, token) => {
+  return await commonAPI('DELETE', `${serverUrl}/falist/${id}/`, '', {
+    Authorization: `Bearer ${token}`,
+  });
+};
+
+//edit faculty
+export const editFacultyApi = async (id, facultydetails, token) => {
+  return await commonAPI('PUT', `${serverUrl}/falist/${id}/`, facultydetails, {
     Authorization: `Bearer ${token}`,
   });
 };
